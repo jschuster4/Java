@@ -55,9 +55,16 @@ class List
     /* Removes and returns the last value in the list. */
     /* Treat me like array.pop() would */
     PopBack()
-    {   
-        let runner = this.head
-        while(runner.next.next) runner= runner.next;
+    {
+        let runner = this.head;
+        if (runner == undefined) return undefined;
+        if (runner.next == undefined) return this.PopFront();
+        while(runner.next.next){
+            runner = runner.next
+        }
+        let node = runner.next;
+        runner.next = undefined;
+        return node;
     }
 
     /* EXTRA / OPTIONAL */
