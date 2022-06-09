@@ -50,4 +50,17 @@ public class Puzzle {
         }
         return arr;
     }
+
+    public static String[] shuffleArray(String[] arr){
+        Random rand = new Random();
+        String[] answer = arr;
+        for(int i=0; i< 3*arr.length; i++){
+            int randomIndex1 = rand.nextInt(arr.length);
+            int randomIndex2 = rand.nextInt(arr.length);
+            String temp = arr[randomIndex1];
+            answer[randomIndex1] = arr[randomIndex2];
+            answer[randomIndex2] = temp;
+        }
+        return answer;
+    }
 }
