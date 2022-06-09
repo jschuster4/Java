@@ -5,6 +5,7 @@ public class BankAccount {
     private double SavingsBalance;
     private static int NumUsers = 0;
     private String AccountNumber;
+    private static double totalMoney = 0.0D;
     
     public BankAccount(double CheckingBalance, double SavingsBalance)
     {
@@ -12,6 +13,7 @@ public class BankAccount {
         this.SavingsBalance = SavingsBalance;
         this.AccountNumber = BankAccount.generateNumber();
         NumUsers++;
+        totalMoney += CheckingBalance + SavingsBalance;
     }
 
     public BankAccount()
@@ -46,22 +48,29 @@ public class BankAccount {
     public void Deposit(double number, boolean accountType){
         if (accountType == true){
             SavingsBalance += number;
+            totalMoney += number; 
         }
         else{
             CheckingBalance += number;
+            totalMoney += number;
         }
     }
 
     public void Withdraw(double number, boolean accountType){
-        if (SavingsBalance < number){
-            System.out.println("Insufficient funds");
+        if (accountType == true && SavingsBalance < number){
+            System.out.println("Insufficient funds in Savings account");
+        }
+        if (accountType == false && CheckingBalance < number){
+            System.out.println("Insufficient funds in Checking account");
         }
         else{
             if (accountType == true){
                 SavingsBalance -= number;
+                totalMoney -= number;
             }
             else{
                 CheckingBalance -= number;
+                totalMoney -= number;
             }
         }
     }
@@ -69,6 +78,7 @@ public class BankAccount {
 
     public double getTotal(){
         return CheckingBalance + SavingsBalance;
+        //return totalMoney;
     }
 
     public static String generateNumber(){
