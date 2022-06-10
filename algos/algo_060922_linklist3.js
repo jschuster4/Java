@@ -40,7 +40,7 @@ class List
         let runner = this.head; 
         while(runner.next){
             if (value == runner.next.value){
-                runner.next.value = null;
+                // runner.next.value = null;
                 runner.next = runner.next.next;
             }
             runner = runner.next;
@@ -233,3 +233,6 @@ list.Iterate(value=>console.log(value));
 // list.Prepend(333,444);
 
 // list.Iterate(value=>console.log(value));
+
+
+
