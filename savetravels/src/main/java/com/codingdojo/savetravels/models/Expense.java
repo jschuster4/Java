@@ -26,6 +26,7 @@ public class Expense {
 	@Size(min=2, max=255, message="vendor must be between 2 and 255 characters")
 	private String vendor;
 	
+	@NotNull(message="amount required")
 	@Min(value=1, message="The expense item needs to be at least $1")
 	@Max(value=20000, message="The expense needs to be less than $20K")
 	private double amount;

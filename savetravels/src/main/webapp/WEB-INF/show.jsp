@@ -13,22 +13,26 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<h1>Save Travels</h1>
+	<h1>Expense Details</h1>
+	<a href="/expense">Go back</a>
 	
 	<table>
 		<tr>
-			<th>Expense</th>
-			<th>Vendor</th>
-			<th>Amount</th>
+			<th>Expense name:</th>
+			<td>${expense.name}</td>
 		</tr>
-		<c:forEach var="item" items="${expenses}">
 		<tr>
-			<td><c:out value="${item.getName()}"/></td>
-			<td><c:out value="${item.getVendor()}"/></td>
-			<td><c:out value="${item.getAmount()}"/></td>
+			<th>Expense Description: </th>
+			<td>${expense.description}</td>
 		</tr>
-		</c:forEach>
-
+		<tr>
+			<th>Vendor: </th>
+			<td>${expense.vendor}</td>
+		</tr>
+		<tr>
+			<th>Amount Spent: </th>
+			<td>$${expense.amount}</td>
+		</tr>
 	
 	</table>
 </body>

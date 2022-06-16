@@ -13,6 +13,24 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<h1>I'm a Template</h1>
+	<h1>Expense Details</h1>
+	<a href="/expense">Go back</a>
+	<form:form action="/expense/edit/${expense.id}" method="POST" modelAttribute="expense">
+	
+		<form:errors path="name" ></form:errors>
+		<form:input placeholder="name" path="name" ></form:input>
+		
+		<form:errors path="vendor" ></form:errors>
+		<form:input placeholder="vendor" path="vendor"></form:input>
+		
+		<form:errors path="amount" ></form:errors>
+		<form:input type="number" placeholder="amount" path="amount"></form:input>
+		
+		<form:errors path="description" ></form:errors>
+		<form:input placeholder="description" path="description"></form:input>
+		
+		<input type="submit" value="Update Expense"/>
+		
+	</form:form>
 </body>
 </html>

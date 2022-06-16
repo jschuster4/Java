@@ -9,5 +9,4 @@ import com.codingdojo.savetravels.models.Expense;
 public interface ExpenseRepository extends CrudRepository<Expense, Long>{
 	
 	
-	
 }

@@ -28,7 +28,7 @@
 			<td><c:out value="${item.getAmount()}"/></td>
 			<td>
 				<a href="/expense/edit/${item.id}">Edit</a>
-				<form action="/expense/delete/${item.id}" method="GET">
+				<form action="/expense/delete/${item.id}" method="POST">
 					<input type="submit" value="Delete" />
 				</form>
 			</td>
