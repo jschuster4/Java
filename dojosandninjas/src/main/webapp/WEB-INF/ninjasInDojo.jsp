@@ -21,16 +21,13 @@
 			<th>Last Name</th>
 			<th>Age</th>	
 		</tr>
-		<tr>
-		<c:forEach var="person" items="${dojo}">
+		<c:forEach var="ninja" items="${dojo.getNinjas()}">
 			<tr>
-				<td>person.firstname</td>
-				<td>person.lastname</td>
-				<td>person.age</td>
+				<td><c:out value= "${ninja.getFirstname()}"/></td>
+				<td><c:out value= "${ninja.getLastname()}"/></td>
+				<td><c:out value= "${ninja.getAge()}"/></td>
 			</tr>
 		</c:forEach>
-		
-		</tr>
 
 	</table>
 </body>

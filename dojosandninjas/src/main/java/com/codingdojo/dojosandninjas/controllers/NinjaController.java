@@ -34,10 +34,12 @@ public class NinjaController {
 	}
 	
 	@PostMapping("/new")
-	public String createDojo(@Valid @ModelAttribute("ninja") Ninja ninja, BindingResult res) {
+	public String creatNinja(@Valid @ModelAttribute("ninja") Ninja ninja, BindingResult res, Model model) {
 		if(res.hasErrors()) {
+			model.addAttribute("dojo", dojoService.findAll());
 			return "newNinja";
 		}
+		ninjaService.create(ninja);
 		return "redirect:/ninja/new";
 	}
 	
