@@ -52,4 +52,8 @@ public class Dojo {
 		this.name = name;
 	}
 	
+	public Dojo() {
+		
+	}
+	
 }

@@ -34,33 +34,16 @@ public class NinjaController {
 	}
 	
 	@PostMapping("/new")
-	public String creatNinja(@Valid @ModelAttribute("ninja") Ninja ninja, BindingResult res, Model model) {
+	public String addNinja(@Valid @ModelAttribute("ninja") Ninja ninja, BindingResult res, Model model) {
 		if(res.hasErrors()) {
 			model.addAttribute("dojo", dojoService.findAll());
 			return "newNinja";
 		}
 		ninjaService.create(ninja);
-		return "redirect:/ninja/new";
+		return "redirect:/dojo/new";
 	}
 	
 }
 	
-//	@GetMapping("/new")
-//	public String createNinja(@ModelAttribute("ninja") Ninja ninja) {
-//		
-//		return "";
-//	}
-	
-//	@PostMapping("/new")
-//	public String addNinja(@Valid @modelAttribute("ninja"), Ninja ninja, BindingResult res) {
-	
-//	@GetMapping("")
-//	public String findAllNinjas(Model model) {
-//		model.addAttribute("ninja", ninjaService.findAll());		
-//		return "";
-//	}
-//	
-//	@PostMapping("/new")
-//	public String 
 	
 

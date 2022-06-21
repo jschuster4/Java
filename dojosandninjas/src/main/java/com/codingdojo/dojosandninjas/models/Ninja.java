@@ -37,7 +37,7 @@ public class Ninja {
 	@JoinColumn(name="dojo_id")
 	private Dojo dojo;
 	
-	
+	public Ninja() {}
 
 
 
