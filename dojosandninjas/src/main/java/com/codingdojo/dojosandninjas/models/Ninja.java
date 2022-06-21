@@ -39,9 +39,7 @@ public class Ninja {
 	
 	public Ninja() {}
 
-
-
-
+	
 	public Long getId() {
 		return id;
 	}
