@@ -12,16 +12,22 @@ class MinHeap
         /* smaller than it's parent. */
     /* Time: O(log n) */
     /* Space: O(1) */
+
     Insert(value)
     {
         this.data.push(value);
-        // if(this.data[this.data.length - i] < this.data[this.data.length - 2])
-        var i= this.data.length -1;
-        while(this.data[i-1] < this.data[Math.floor(i / 2)]){
-            let temp
+        let i=this.data.length-1;
+        while(i>1 && this.data[i]<this.data[Math.floor(i/2)])
+        {
+            let parent = Math.floor(i/2);
+            let temp=this.data[i];
+            this.data[i]=this.data[parent];
+            this.data[parent]=temp;
+            i=Math.floor(i/2);
         }
         
     }
+
 
     /* Description: Returns the smallest value in the heap without removing it. */
     /* Time: O(1) */
@@ -43,7 +49,7 @@ class MinHeap
 
             for(let j=0;j<to;j++)
             {
-
+                
             }
         }
         console.log(fmt);
@@ -53,4 +59,4 @@ class MinHeap
 let heap=new MinHeap();
 heap.Insert(5);
 heap.Log(); /* Expected: 5,10,40,20,60,50,30,70 */
-console.log(heap.Min()); /* Expected: 5 */
+// console.log(heap.Min()); /* Expected: 5 */

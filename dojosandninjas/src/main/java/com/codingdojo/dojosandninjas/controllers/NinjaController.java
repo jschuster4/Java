@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.codingdojo.dojosandninjas.models.Dojo;
 import com.codingdojo.dojosandninjas.models.Ninja;
 import com.codingdojo.dojosandninjas.services.DojoService;
 import com.codingdojo.dojosandninjas.services.NinjaService;
